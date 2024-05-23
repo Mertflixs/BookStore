@@ -1,27 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const {Pool} = require("pg");
-
+const { pool } = require("./Model/dataBaseModel");
+const bookRouter = require("./Routes/BookRoute");
 const App = express();
 
 const port = process.env.port || 3001;
 
-const pool = new Pool({
-	user: 'postgres',
-	host: 'postgres',
-	database: 'book',
-	password: '123',
-	port: 5432,
-});
-
-const getBooks = async () => {
-	try {
-		const res = await pool.query('SELECT * FROM books');
-		console.log('Books: ', res.rowCount);
-	} catch (err) {
-		console.log(err);
-	}
-}
+App.use(express.json());
+App.use(cors());
+App.use("/api", bookRouter);
 
 pool.connect((err, client, release) => {
 	if (err) {
@@ -30,7 +17,11 @@ pool.connect((err, client, release) => {
 	console.log('Veritabani baglantisi basarili');
 });
 
+App.get("/", (req, res) => {
+	console.log("test");
+	res.send("Welcome our chatApp");
+  });
+
 App.listen(port, (req,res) => {
 	console.log(`Server is running on port : ${port}`);
-	getBooks();
 })

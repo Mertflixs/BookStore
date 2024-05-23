@@ -1,0 +1,29 @@
+.book-card {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin: 10px;
+	width: 200px;
+	text-align: center;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+}
+
+.book-card p {
+	font-weight: 700;
+}
+
+.book-info {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+}
+
+.book-info .price {
+	margin: 5px 0;
+}

@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
+import './Navbar.css';
 
 const Navbar = () => {
 	return (
-		<div>
-			<span>
-				<a>Navbar</a>
-			</span>
-		</div>
+		<header className="header">
+			<a href="/" className="logo">Logo</a>
+			<nav className="navbar">
+				<a href="/">Sepet</a>
+				<a href="/">Sign in</a>
+			</nav>
+		</header>
 	);
 }
 
