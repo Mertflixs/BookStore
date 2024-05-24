@@ -20,7 +20,6 @@ const BookDetails = () => {
           <p className="pageCount">Sayfa Sayisi: {book.pagecount}</p>
           <p className="price">Fiyat: {book.price} TL</p>
           <button>Satin Al</button>
-		  <p>test</p>
         </div>
       </div>
       <div className="book-description">
