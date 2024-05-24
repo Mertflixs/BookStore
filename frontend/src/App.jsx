@@ -6,6 +6,7 @@ import { UserContext } from "./Context/UserContext";
 import { BookContextProvider } from "./Context/BookContext";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
+import BookDetails from "./Pages/BookDetails";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -16,6 +17,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
+		  <Route path="/book/:id" element={<BookDetails/>} />
         </Routes>
       </Container>
     </BookContextProvider>
