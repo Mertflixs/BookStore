@@ -6,8 +6,6 @@ import "./Home.css";
 const Home = () => {
 	const {book} = useContext(BookContext);
 
-	console.log("home jsx book: ", book);
-
 	return(
 		<div className="book-list">
 			{

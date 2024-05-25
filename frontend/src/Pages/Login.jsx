@@ -1,21 +1,10 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useContext, useState} from "react";
 import "./Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
+import { UserContext } from "../Context/UserContext";
 
 const LoginPage = () => {
-  const [loginInfo, setLoginInfo] = useState({
-    name: "",
-    password: "",
-  });
-
-  const updateLoginInfo = useCallback((info) => {
-    console.log(info);
-    setLoginInfo(info);
-  }, []);
-
-  const loginUser = () => {
-	console.log("login user");
-  }
+  const {user, loginUser, loginInfo, updateLoginInfo} = useContext(UserContext);
 
   return (
     <div className="login-body">
@@ -25,9 +14,9 @@ const LoginPage = () => {
           <div className="input-box">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               onChange={(e) =>
-                updateLoginInfo({ ...loginInfo, name: e.target.value })
+                updateLoginInfo({ ...loginInfo, email: e.target.value })
               }
               required
             />
@@ -46,9 +35,6 @@ const LoginPage = () => {
           </div>
 
           <div className="remember-forgot">
-            <label>
-              <input type="checkbox" /> Remember me
-            </label>
             <a href="#">Forgot Password ?</a>
           </div>
 

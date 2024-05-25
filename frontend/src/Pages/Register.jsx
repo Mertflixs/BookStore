@@ -1,26 +1,12 @@
-import React, {useState, useCallback} from "react";
+import React, { useState, useCallback } from "react";
 import "./Register.css";
 import { FaUser, FaLock } from "react-icons/fa";
+import { UserContext } from "../Context/UserContext";
+import { useContext } from "react";
 
 const RegisterUser = () => {
-  const [registerMessage, setRegisterMessage] = useState({
-    error: "",
-    message: "",
-  });
-  const [registerInfo, setRegisterInfo] = useState({
-    name: "",
-    password: "",
-  });
-
-  const updateRegisterInfo = useCallback((info) => {
-    console.log(info);
-    setRegisterInfo(info);
-  }, []);
-
-  const registerUser = () => {
-	console.log(registerInfo);
-  }
-
+  const { registerUser, registerInfo, updateRegisterInfo } =
+    useContext(UserContext);
   return (
     <div className="register-body">
       <div className="wrapper-register">
@@ -31,7 +17,7 @@ const RegisterUser = () => {
               type="text"
               placeholder="Username"
               onChange={(e) =>
-                updateRegisterInfo({ ...registerInfo, name: e.target.value })
+                updateRegisterInfo({ ...registerInfo, email: e.target.value })
               }
               required
             />

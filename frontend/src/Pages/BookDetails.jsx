@@ -1,10 +1,17 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./BookDetails.css";
+import { BasketContext } from "../Context/BasketContext";
+import { useContext } from "react";
 
 const BookDetails = () => {
   const location = useLocation();
   const { book } = location.state;
+  const { addToBasket } = useContext(BasketContext);
+
+  const handleToBasket = () => {
+	addToBasket(book)
+  }
 
   console.log(book);
   return (
@@ -16,10 +23,10 @@ const BookDetails = () => {
         <div className="book-info">
           <h1>{book.title}</h1>
           <p className="authors">Yazarlar: {book.authors.join(", ")}</p>
-		  <p className="categories">Konusu: {book.categories.join(", ")}</p>
+          <p className="categories">Konusu: {book.categories.join(", ")}</p>
           <p className="pageCount">Sayfa Sayisi: {book.pagecount}</p>
           <p className="price">Fiyat: {book.price} TL</p>
-          <button>Satin Al</button>
+          <button onClick={handleToBasket}>Satin Al</button>
         </div>
       </div>
       <div className="book-description">

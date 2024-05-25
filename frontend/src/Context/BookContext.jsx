@@ -8,7 +8,7 @@ export const BookContextProvider = ({ children }) => {
   const [filteredBook, setFilteredBook] = useState(null);
 
   useEffect(() => {
-    const getUser = async () => {
+    const getBook = async () => {
       const res = await getRequest(`${baseUrl}/getBook`);
 
       if (res.error) {
@@ -17,7 +17,7 @@ export const BookContextProvider = ({ children }) => {
       setBook(res.rows);
       setFilteredBook(res.rows);
     };
-    getUser();
+    getBook();
   }, []);
 
   const filterBook = (searchTerm) => {
