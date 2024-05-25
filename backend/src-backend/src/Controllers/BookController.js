@@ -1,5 +1,4 @@
 const { pool } = require("../Model/dataBaseModel");
-const jwt = require("jsonwebtoken");
 
 const getBooks = async(req, res) => {
 	try {
