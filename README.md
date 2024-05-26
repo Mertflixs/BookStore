@@ -37,6 +37,31 @@ Bu komut, PostgreSQL ve Node.js tabanlı backend servisini çalıştıracak, ard
 - Frontend `localhost:3000`
 - Backend `localhost:3001`
 
+##PostgreSql Görüntüleme
+- Öncelikle databaseimizi docker ile kaldiriyoruz
+- PgAdmin4 kurulumunu tamamlıyoruz
+
+```bash
+docker ps
+
+Bu sekılde goruntu gelecek burada CONTAINER ID numarasını kullanacagız
+CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+de6b4fffeafb   test-frontend   "docker-entrypoint.s…"   5 minutes ago   Up 6 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   test-frontend-1
+ba4c51b25335   test-backend    "docker-entrypoint.s…"   5 minutes ago   Up 6 seconds   0.0.0.0:3001->3001/tcp, :::3001->3001/tcp   test-backend-1
+dbc6ebe92efd   test-postgres   "docker-entrypoint.s…"   5 minutes ago   Up 6 seconds   5432/tcp                                    test-postgres-1
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test-postgres-container-id 
+bu komut ile ip adresini almış oluyoruz.
+
+PgAdmin4 programını çalıştırıyoruz
+-Add New Server ile işleme devam ediyoruz
+-Name kısmına ıstedıgımız ısımı verebılırız
+sonrasında connection kısmından devam ediyoruz
+Host name/address alanına bulmuş oldugumuz ip adresini yazıyoruz
+Maintenance database ve password kısmına backend/psql klasöründeki psqlçDockerfile a bakarak öğrene bilirsiniz.
+save işlemini yaptıktan sonra databaseimizdeki tabloları görüntüleye bilirsiniz.
+```
+
 ### Kullanılan Teknolojiler
 
 - React: Kullanıcı arayüzünü oluşturmak için kullanıldı.
