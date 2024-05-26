@@ -2,12 +2,14 @@ import React, { useContext, useState, useEffect } from "react";
 import "./Basket.css";
 import { BasketContext } from "../Context/BasketContext";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import Notification from "../Components/Alert";
 
 const BasketPage = () => {
-	const { basketBook, removeFromBasket, clearBasket } =
+  const { basketBook, removeFromBasket, clearBasket } =
     useContext(BasketContext);
   const [quantities, setQuantities] = useState({});
   const [uniqueBooks, setUniqueBooks] = useState([]);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     const initialQuantities = {};
@@ -58,6 +60,16 @@ const BasketPage = () => {
     setUniqueBooks([]);
   };
 
+  const handleBuyClick = () => {
+	setShowNotification(true);
+	clearBasket();
+    setQuantities({});
+    setUniqueBooks([]);
+	setTimeout(() => {
+		setShowNotification(false);
+	}, 2000);
+  };
+
   return (
     <div className="basket-container">
       <div className="basket-page">
@@ -76,8 +88,12 @@ const BasketPage = () => {
                 </div>
               </div>
               <div className="basket-button">
-                <button onClick={() => handleAdd(item.id)}><FaPlus /></button>
-                <button onClick={() => handleRemove(item.id)}><FaMinus /></button>
+                <button onClick={() => handleAdd(item.id)}>
+                  <FaPlus />
+                </button>
+                <button onClick={() => handleRemove(item.id)}>
+                  <FaMinus />
+                </button>
               </div>
             </div>
           ))}
@@ -85,11 +101,14 @@ const BasketPage = () => {
       </div>
       <div className="basket-summary">
         <button className="clear-button" onClick={handleClearBasket}>
-          Bütün Kitapları Cikar
+          Bütün Kitapları temizle
         </button>
         <p>Toplam Fiyat: {totalPrice} TL</p>
-        <button className="checkout-button">Satın Al</button>
+        <button className="checkout-button" onClick={handleBuyClick}>
+          Satın Al
+        </button>
       </div>
+	  {showNotification && <Notification message={"Satin alim islemi basarili olmustur."} />}
     </div>
   );
 };

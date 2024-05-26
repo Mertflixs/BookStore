@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import "./Register.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { UserContext } from "../Context/UserContext";

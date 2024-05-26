@@ -54,6 +54,7 @@ export const UserContextProvider = ({ children }) => {
   const logoutUser = () => {
     localStorage.removeItem("User");
     setUser(null);
+	navigate("/");
   };
 
   const loginUser = useCallback(
@@ -97,6 +98,7 @@ export const UserContextProvider = ({ children }) => {
         registerInfo,
         registerUser,
         updateRegisterInfo,
+		registerError,
       }}
     >
       {children}

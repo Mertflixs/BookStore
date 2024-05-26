@@ -1,10 +1,10 @@
-import React, {useCallback, useContext, useState} from "react";
+import React, {useContext} from "react";
 import "./Login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { UserContext } from "../Context/UserContext";
 
 const LoginPage = () => {
-  const {user, loginUser, loginInfo, updateLoginInfo} = useContext(UserContext);
+  const {loginUser, loginInfo, updateLoginInfo} = useContext(UserContext);
 
   return (
     <div className="login-body">
