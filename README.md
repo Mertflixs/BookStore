@@ -44,7 +44,7 @@ Bu komut, PostgreSQL ve Node.js tabanlı backend servisini çalıştıracak, ard
 ```bash
 docker ps
 
-Bu sekılde goruntu gelecek burada CONTAINER ID numarasını kullanacagız
+Bu sekılde goruntu gelecek burada CONTAINER ID numarasını kullanacağız
 CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 de6b4fffeafb   test-frontend   "docker-entrypoint.s…"   5 minutes ago   Up 6 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   test-frontend-1
 ba4c51b25335   test-backend    "docker-entrypoint.s…"   5 minutes ago   Up 6 seconds   0.0.0.0:3001->3001/tcp, :::3001->3001/tcp   test-backend-1
@@ -55,10 +55,10 @@ bu komut ile ip adresini almış oluyoruz.
 
 PgAdmin4 programını çalıştırıyoruz
 -Add New Server ile işleme devam ediyoruz
--Name kısmına ıstedıgımız ısımı verebılırız
+-Name kısmına istediğimiz isimi verebiliriz
 sonrasında connection kısmından devam ediyoruz
 Host name/address alanına bulmuş oldugumuz ip adresini yazıyoruz
-Maintenance database ve password kısmına backend/psql klasöründeki psqlçDockerfile a bakarak öğrene bilirsiniz.
+Maintenance database ve password kısmına backend/psql klasöründeki psql.Dockerfile a bakarak öğrenebilirsiniz.
 save işlemini yaptıktan sonra databaseimizdeki tabloları görüntüleye bilirsiniz.
 ```
 
