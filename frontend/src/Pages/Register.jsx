@@ -15,7 +15,7 @@ const RegisterUser = () => {
           <div className="input-box-register">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               onChange={(e) =>
                 updateRegisterInfo({ ...registerInfo, email: e.target.value })
               }
