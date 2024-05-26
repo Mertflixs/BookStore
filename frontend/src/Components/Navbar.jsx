@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import SearchBar from "./SearchBar";
 import { UserContext } from "../Context/UserContext";
 import { useContext } from "react";
-import { BasketContext } from "../Context/BasketContext";
 
 const Navbar = () => {
 	const {user, logoutUser} = useContext(UserContext);
