@@ -1,69 +1,98 @@
-.basket {
-	margin: 20px;
-  }
-  
-  .basket h2 {
-	font-size: 24px;
-	margin-bottom: 10px;
-  }
-  
-  .basket-items {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 20px;
-  }
-  
-  .basket-item {
-	border: 1px solid #ccc;
-	border-radius: 5px;
+.basket-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 150px;
+}
+
+.basket-page {
+  width: 60%;
+  max-width: 800px;
+  min-height: 400px;
+  padding: 20px;
+  border: 1px solid #ddd; /* Opsiyonel: Çerçeve eklemek isterseniz */
+  border-radius: 8px; /* Opsiyonel: Köşeleri yuvarlatmak isterseniz */
+  background-color: #fff; /* Opsiyonel: Arka plan rengi */
+  box-shadow: 0 4px 8px rgba(0, 129, 255, 0.4); /* Opsiyonel: Hafif gölge efekti */
+  max-height: 80vh; /* Yüksekliği sınırlar */
+  overflow-y: auto; /* Dikey kaydırma çubuğu ekler */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-items {
+	margin-bottom: 20px;
+	min-height: 0;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  justify-content: space-between;
+}
+
+.basket-item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-details .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.book-details .price,
+.book-details .quantity {
+  font-size: 14px;
+  color: #555;
+}
+
+.basket-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.basket-summary p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkout-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
+}
+
+.basket-button {
+	display: flex;
+	align-items: center;
+	border: 1px solid rgba(0, 129, 255, 0.4);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 129, 255, 0.4);
+}
+
+.basket-button button {
+	padding: 8px;
+	margin: 2px;
+	border: none;
+	background: rgb(135, 206, 250);
 	padding: 10px;
-  }
-  
-  .basket-item img {
-	width: 100px;
-	height: auto;
-  }
-  
-  .item-info {
-	margin-top: 10px;
-  }
-  
-  .item-info p {
-	margin: 5px 0;
-  }
-  
-  .item-info .title {
-	font-weight: bold;
-  }
-  
-  .item-info .price {
-	font-size: 18px;
-	color: #009688;
-  }
-  
-  .item-info button {
-	background-color: #009688;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 5px 10px;
-	cursor: pointer;
-  }
-  
-  .total-price {
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: 20px;
-  }
-  
-  .buy-button {
-	background-color: #009688;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 18px;
-	cursor: pointer;
-	margin-top: 20px;
-  }
-  
+}

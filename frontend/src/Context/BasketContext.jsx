@@ -17,11 +17,29 @@ export const BasketContextProvider = ({ children }) => {
     setBasketBook((prevBasket) => [...prevBasket, book]);
   };
 
+  const removeFromBasket = (bookId) => {
+    setBasketBook((prevBasket) => {
+      const bookIndex = prevBasket.findIndex((book) => book.id === bookId);
+      if (bookIndex === -1) return prevBasket;
+
+      const updatedBasket = [...prevBasket];
+      updatedBasket.splice(bookIndex, 1);
+
+      return updatedBasket;
+    });
+  };
+
+  const clearBasket = () => {
+    setBasketBook([]);
+  };
+
   return (
     <BasketContext.Provider
       value={{
         basketBook,
         addToBasket,
+		removeFromBasket,
+		clearBasket,
       }}
     >
       {children}
