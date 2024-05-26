@@ -4,10 +4,6 @@
 React, NodeJs, Postgresql, Docker kullanilmistir.
 Küçük çaplı kitap satış sitesi yapılmıştır.
 
-## Yükleme 
-
-Projeyi Docker ile çalıştırabilirsiniz.
-
 ## Başlarken
 
 ### Gereksinimler
@@ -25,7 +21,12 @@ Proje dosyalarını yerel makinenize klonlayın:
 ```bash
 git clone https://github.com/Mertflixs/bookstore.git
 cd bookstore
+cd backend/psql
+open data.zip
 ```
+
+PostgreSql için gereklı data dosyamızı zipten çıkararak başladık.
+Sonrasında docker-compose.yml dosyamızın oldugu konuma gelerek komutumuzu calıstırdık.
 
 ```bash
 docker compose up --build
