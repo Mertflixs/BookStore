@@ -24,8 +24,8 @@
 }
 
 .basket-items {
-	margin-bottom: 20px;
-	min-height: 0;
+  margin-bottom: 20px;
+  min-height: 0;
 }
 
 .basket-item {
@@ -60,7 +60,6 @@
 }
 
 .basket-summary {
-  border-top: 1px solid #ddd;
   padding-top: 20px;
 }
 
@@ -70,29 +69,51 @@
 }
 
 .checkout-button {
-  background-color: #4caf50;
-  color: white;
+  background-color: rgb(135, 206, 250);
+  color: black;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 129, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.4);
 }
 
 .checkout-button:hover {
-  background-color: #45a049;
+  background-color: rgb(0, 129, 255);
 }
 
 .basket-button {
-	display: flex;
-	align-items: center;
-	border: 1px solid rgba(0, 129, 255, 0.4);
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 129, 255, 0.4);
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 129, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 129, 255, 0.4);
+  margin-left: 15px;
+  background: rgb(135, 206, 250);
 }
 
 .basket-button button {
-	padding: 8px;
-	margin: 2px;
-	border: none;
-	background: rgb(135, 206, 250);
-	padding: 10px;
+  padding: 3px;
+  margin: 2px;
+  border: none;
+  background: none;
+}
+
+.basket-button button:hover {
+  background: rgb(0, 129, 255);
+  border-radius: 8px;
+}
+
+.clear-button {
+  background: rgb(135, 206, 250);
+  border: 1px solid rgba(0, 129, 255, 0.4);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.4);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.clear-button:hover {
+  background: rgb(0, 129, 255);
 }

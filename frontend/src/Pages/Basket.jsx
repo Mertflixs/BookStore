@@ -4,7 +4,7 @@ import { BasketContext } from "../Context/BasketContext";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const BasketPage = () => {
-  const { basketBook, removeFromBasket, clearBasket } =
+	const { basketBook, removeFromBasket, clearBasket } =
     useContext(BasketContext);
   const [quantities, setQuantities] = useState({});
   const [uniqueBooks, setUniqueBooks] = useState([]);

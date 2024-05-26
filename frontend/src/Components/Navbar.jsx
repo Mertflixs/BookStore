@@ -7,11 +7,6 @@ import { BasketContext } from "../Context/BasketContext";
 
 const Navbar = () => {
 	const {user, logoutUser} = useContext(UserContext);
-	const {basketBook} = useContext(BasketContext);
-
-	const clearBasket = () => {
-		localStorage.removeItem("BasketBook");
-	}
 
   return (
     <>
@@ -21,7 +16,7 @@ const Navbar = () => {
         </a>
         <nav className="navbar">
           <SearchBar />
-          <a href="/basket">Sepet ({basketBook?.length})</a>
+          <a href="/basket">Sepet</a>
           {user ? (<a href="/" onClick={logoutUser}>
 			Cikis yap
 		  </a>) : 
